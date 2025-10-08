@@ -1,0 +1,57 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evalúa tu experiencia - Odontología Especializada Chetumal</title>
+
+    <meta
+      name="description"
+      content="Comparte tu experiencia en Odontología Especializada Chetumal y ayúdanos a mejorar nuestros servicios."
+    />
+    <meta
+      name="keywords"
+      content="dentista Chetumal, ortodoncista, evaluación, reseña, Quintana Roo"
+    />
+    <meta name="author" content="Odontología Especializada Chetumal" />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w.org/2000/svg'><text y='32' font-size='32'>🦷</text></svg>"
+    />
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-brand-purple from-0% to-brand-blue to-70% via-[#1e3a8a] font-sans p-4 flex items-center justify-center relative overflow-hidden"
+  >
+    <div class="absolute inset-0 pointer-events-none z-0">
+      <div
+        class="absolute text-2xl opacity-10 top-[10%] left-[10%] animate-float"
+      >
+        🦷
+      </div>
+      <div
+        class="absolute text-2xl opacity-10 top-[20%] right-[15%] animate-float [animation-delay:2s]"
+      >
+        ✨
+      </div>
+      <div
+        class="absolute text-2xl opacity-10 bottom-[30%] left-[20%] animate-float [animation-delay:4s]"
+      >
+        😊
+      </div>
+      <div
+        class="absolute text-2xl opacity-10 bottom-[20%] right-[10%] animate-float [animation-delay:1s]"
+      >
+        🦷
+      </div>
+    </div>
+
+    <main class="relative z-10 w-full">
+      <slot />
+    </main>
+  </body>
+</html>

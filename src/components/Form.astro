@@ -1,0 +1,297 @@
+---
+import "../styles/global.css";
+---
+
+<div
+  class="form-container max-w-2xl mx-auto bg-white/95 backdrop-blur-lg rounded-2xl p-6 md:p-10 shadow-form border-2 border-brand-purple/20 animate-slideUp"
+>
+  <header class="text-center mb-8">
+    <div class="flex flex-col items-center justify-center gap-4 mb-5">
+      <div
+        class="w-32 h-32 bg-gradient-to-br from-brand-purple to-brand-blue rounded-full flex items-center justify-center shadow-lg animate-pulse"
+      >
+        <img
+          class="w-full h-full rounded-full"
+          src="/LogoOE.jpg"
+          alt="Logo de Odontología Especializada Chetumal"
+        />
+      </div>
+      <h1 class="text-2xl md:text-3xl font-bold text-brand-blue text-shadow">
+        Odontología Especializada <br />Chetumal
+      </h1>
+      <p class="text-gray-500">
+        Tu opinión nos ayuda a brindar la mejor atención
+      </p>
+    </div>
+  </header>
+
+  <form id="satisfactionForm" novalidate>
+    <div class="mb-6">
+      <label
+        for="patientName"
+        class="block mb-2 font-semibold text-brand-blue uppercase tracking-wide text-sm"
+        >👤 Nombre del paciente:</label
+      >
+      <input
+        type="text"
+        id="patientName"
+        name="patientName"
+        placeholder="Escribe tu nombre completo"
+        required
+        class="w-full p-3 border-2 border-gray-200 rounded-lg transition duration-300 focus:ring-2 focus:ring-brand-purple focus:border-transparent"
+      />
+    </div>
+
+    <div class="mb-6">
+      <label
+        for="treatmentDate"
+        class="block mb-2 font-semibold text-brand-blue uppercase tracking-wide text-sm"
+        >📅 Fecha del tratamiento:</label
+      >
+      <div class="flex flex-col sm:flex-row gap-2">
+        <input
+          type="date"
+          id="treatmentDate"
+          name="treatmentDate"
+          required
+          class="w-full p-3 border-2 border-gray-200 rounded-lg transition duration-300 focus:ring-2 focus:ring-brand-purple focus:border-transparent"
+        />
+        <button
+          type="button"
+          id="today-btn"
+          class="today-btn bg-gradient-to-r from-brand-purple to-brand-blue text-white font-bold py-3 px-4 rounded-lg whitespace-nowrap hover:opacity-90 transition-transform duration-300 hover:-translate-y-0.5"
+        >
+          📅 Hoy
+        </button>
+      </div>
+    </div>
+
+    <div class="mb-6">
+      <label
+        for="treatmentType"
+        class="block mb-2 font-semibold text-brand-blue uppercase tracking-wide text-sm"
+        >🦷 Tipo de tratamiento:</label
+      >
+      <select
+        id="treatmentType"
+        name="treatmentType"
+        required
+        class="w-full p-3 border-2 border-gray-200 rounded-lg transition duration-300 focus:ring-2 focus:ring-brand-purple focus:border-transparent bg-white"
+      >
+        <option value="">Selecciona el tratamiento</option>
+        <option value="consulta-inicial">Consulta inicial y diagnóstico</option>
+        <option value="limpieza-dental">Limpieza dental profesional</option>
+        <option value="brackets-metalicos">Brackets metálicos</option>
+        <option value="brackets-esteticos">Brackets estéticos</option>
+        <option value="invisalign">Alineadores transparentes</option>
+        <option value="retenedores">Colocación de retenedores</option>
+        <option value="cirugia-oral">Cirugía oral</option>
+        <option value="resina-estetica">Resinas estéticas</option>
+        <option value="incrustacion-recina"
+          >Incrustación de resina estética</option
+        >
+        <option value="protesis-fija">Protesis fija</option>
+        <option value="protesis-removible">Prótesis removible</option>
+        <option value="extraccion">Extracción dental</option>
+        <option value="ajuste-ortodoncico">Ajuste ortodóncico</option>
+        <option value="blanqueamiento">Blanqueamiento dental</option>
+        <option value="implante">Implante dental</option>
+        <option value="endodoncia">Endodoncia</option>
+        <option value="otro">Otro tratamiento</option>
+      </select>
+    </div>
+
+    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 my-6">
+      <h3
+        class="text-center font-bold text-brand-blue mb-4 uppercase tracking-wider"
+      >
+        ⭐ Califica tu experiencia ⭐
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="rating-item text-center">
+          <label class="font-medium text-gray-700">Atención al cliente</label>
+          <div
+            class="stars flex justify-center gap-2 text-3xl"
+            data-rating="customerService"
+          >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="1">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="2">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="3">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="4">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="5">★</span
+            >
+          </div>
+        </div>
+        <div class="rating-item text-center">
+          <label class="font-medium text-gray-700">Profesionalismo</label>
+          <div
+            class="stars flex justify-center gap-2 text-3xl"
+            data-rating="professionalism"
+          >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="1">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="2">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="3">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="4">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="5">★</span
+            >
+          </div>
+        </div>
+        <div class="rating-item text-center">
+          <label class="font-medium text-gray-700">Instalaciones</label>
+          <div
+            class="stars flex justify-center gap-2 text-3xl"
+            data-rating="facilities"
+          >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="1">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="2">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="3">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="4">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="5">★</span
+            >
+          </div>
+        </div>
+        <div class="rating-item text-center">
+          <label class="font-medium text-gray-700">Resultados</label>
+          <div
+            class="stars flex justify-center gap-2 text-3xl"
+            data-rating="results"
+          >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="1">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="2">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="3">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="4">★</span
+            >
+            <span
+              class="star cursor-pointer text-gray-300 transition-all"
+              data-value="5">★</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-6 text-center">
+      <label class="block mb-4 font-semibold text-brand-blue text-lg"
+        >💙 ¿Nos recomendarías? 💙</label
+      >
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button
+          type="button"
+          class="recommendation-btn flex-1 p-3 font-bold rounded-full border-2 border-gray-300 transition-all duration-300"
+          data-value="si">👍 ¡Claro que sí!</button
+        >
+        <button
+          type="button"
+          class="recommendation-btn flex-1 p-3 font-bold rounded-full border-2 border-gray-300 transition-all duration-300"
+          data-value="no">👎 No, por ahora</button
+        >
+      </div>
+    </div>
+
+    <div class="mb-6">
+      <label
+        for="comments"
+        class="block mb-2 font-semibold text-brand-blue uppercase tracking-wide text-sm"
+        >💭 Cuéntanos más:</label
+      >
+      <textarea
+        id="comments"
+        name="comments"
+        rows="4"
+        placeholder="Comparte detalles, sugerencias o comentarios..."
+        class="w-full p-3 border-2 border-gray-200 rounded-lg transition duration-300 focus:ring-2 focus:ring-brand-purple focus:border-transparent"
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full p-4 bg-gradient-to-r from-brand-purple to-brand-blue text-white font-bold uppercase tracking-widest rounded-lg shadow-button-glow hover:shadow-button-glow-hover hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
+    >
+      <span class="relative z-10">Enviar Evaluación 🚀</span>
+      <span
+        class="absolute top-0 left-0 w-full h-full bg-white opacity-0 transition-opacity group-hover:opacity-20"
+      ></span>
+    </button>
+  </form>
+</div>
+
+<style>
+  .star.active {
+    color: #f59e0b;
+    transform: scale(1.1);
+  }
+  .recommendation-btn.selected {
+    background: linear-gradient(135deg, #c8a2c8, #1e3a8a);
+    color: white;
+    border-color: #1e3a8a;
+  }
+</style>
+
+<script>
+  // Component-specific script for the "Today" button
+  const todayBtn = document.getElementById("today-btn") as HTMLButtonElement;
+  const dateInput = document.getElementById(
+    "treatmentDate",
+  ) as HTMLInputElement;
+
+  todayBtn.addEventListener("click", () => {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+    dateInput.value = `${yyyy}-${mm}-${dd}`;
+  });
+</script>

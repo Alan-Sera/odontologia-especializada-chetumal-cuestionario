@@ -1,0 +1,107 @@
+---
+import "../styles/global.css";
+---
+
+<div
+  class="max-w-2xl mx-auto bg-white/95 backdrop-blur-lg rounded-2xl p-6 md:p-10 shadow-form border-2 border-brand-purple/20 animate-slideUp text-center"
+>
+  <h2 class="text-3xl font-bold text-green-600 mb-2">¡Muchas gracias! 🙏</h2>
+  <p class="text-gray-600 mb-6">
+    Tu opinión es invaluable para <span class="font-bold text-brand-purple"
+      >Odontología Especializada Chetumal</span
+    >
+  </p>
+
+  <div
+    id="google-section"
+    class="hidden mt-6 bg-blue-50/50 p-6 rounded-xl border-2 border-dashed border-brand-purple/50"
+  >
+    <h3 class="text-xl font-bold text-brand-blue mb-3">
+      🌟 ¡Ayúdanos a seguir creciendo! 🌟
+    </h3>
+    <p class="text-gray-600 mb-4">
+      Hemos preparado una reseña basada en tu experiencia. ¡Puedes copiarla y
+      pegarla en Google Maps!
+    </p>
+
+    <div
+      class="review-preview bg-white border border-gray-200 rounded-lg p-4 my-4"
+    >
+      <blockquote
+        class="review-text text-left text-sm text-gray-700 italic border-l-4 border-brand-purple pl-4"
+        id="generatedReview"
+      >
+      </blockquote>
+    </div>
+
+    <div
+      class="flex flex-col md:flex-row items-center justify-center gap-4 mt-4"
+    >
+      <button
+        id="copyBtn"
+        class="w-full md:w-auto flex items-center justify-center gap-2 bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700 transition-transform hover:-translate-y-0.5"
+      >
+        📋 Copiar reseña
+      </button>
+      <span
+        id="copySuccess"
+        class="text-green-600 font-bold opacity-0 transition-opacity"
+        >✅ ¡Copiado!</span
+      >
+    </div>
+
+    <div class="flex flex-col gap-3 mt-6">
+      <a
+        href="https://g.page/r/Ca2Ol-tk-OV_EAE/review"
+        target="_blank"
+        rel="noopener noreferrer"
+        id="googleRedirectBtn"
+        class="w-full flex items-center justify-center gap-3 bg-blue-600 text-white font-bold py-3 px-5 rounded-lg hover:bg-blue-700 transition-transform hover:-translate-y-0.5"
+      >
+        📍 Ir a Google Maps y pegar
+      </a>
+      <a
+        href="https://g.page/r/Ca2Ol-tk-OV_EAE/review"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full text-sm text-gray-600 hover:text-brand-blue"
+      >
+        o escribir mi propia reseña
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const copyBtn = document.getElementById("copyBtn") as HTMLButtonElement;
+  const successMessage = document.getElementById(
+    "copySuccess",
+  ) as HTMLSpanElement;
+  const reviewTextElement = document.getElementById(
+    "generatedReview",
+  ) as HTMLElement;
+  const googleRedirectBtn = document.getElementById(
+    "googleRedirectBtn",
+  ) as HTMLAnchorElement;
+
+  const copyReview = () => {
+    const reviewText = reviewTextElement.textContent;
+    if (reviewText) {
+      navigator.clipboard.writeText(reviewText).then(() => {
+        successMessage.classList.add("opacity-100");
+        setTimeout(() => {
+          successMessage.classList.remove("opacity-100");
+        }, 2000);
+      });
+    }
+  };
+
+  copyBtn.addEventListener("click", copyReview);
+
+  // Automatically copy the review before redirecting
+  googleRedirectBtn.addEventListener("click", (e) => {
+    if (reviewTextElement.textContent?.trim()) {
+      copyReview();
+    }
+  });
+</script>
